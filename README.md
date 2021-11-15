@@ -1,6 +1,3 @@
-# Howto
-
-#### 注意：还没有全部完成
 
 ## 运行测试
 
@@ -35,8 +32,4 @@ API 名称对应 metadata/api.yml
 1. 加载 **metadata/api.yml**
 2. 根据上一步加载的 api 列表，从 **fixtures** 目录下加载对应测试数据集，生成测试用例
 3. 执行测试
-
-## 需要继续开发的部分
-
-1. 对复杂结构的 api response 可以通过某种描述方法使代码可以解析，自动执行 assert ，不需要在代码中 hard code
 
