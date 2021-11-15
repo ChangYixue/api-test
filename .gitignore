@@ -1,0 +1,21 @@
+# Unit test / coverage reports
+.tox/
+.cache
+.pytest_cache/
+
+# pyenv
+.python-version
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+idea/
+__pycache__/
+.idea/
+allure-results/*

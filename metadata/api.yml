@@ -1,0 +1,76 @@
+default_params: &default_params
+  skip_test: true
+  device_id: YYY
+  device_name: Iphone8plus
+  app-version: 5.0.0
+
+bootstrap_sandbox: &login_sandbox
+  description: 【登录】手机号
+  skip_test: true
+  enabled_only: sandbox
+  category: account
+  method: post
+  url: /login/
+  disable_auth: true
+  params:
+    << : *default_params
+
+bootstrap_prod: &login_prod
+  description: 【登录】邮箱
+  skip_test: true
+  enabled_only: prod
+  category: account
+  method: post
+  url: /login/
+  disable_auth: true
+  params:
+    << : *default_params
+
+environments:
+  sandbox:
+    endpoint: https://xxx.com
+    bootstrap:
+      << : *login_sandbox
+  prod:
+    endpoint: https://yyy.com
+    bootstrap:
+      << : *login_prod
+      headers:
+        Authorization: Basic XXX
+
+login_with_mobile:
+  << : *login_sandbox
+
+login_with_email:
+  << : *login_prod
+
+product_info:
+  description: 产品信息
+  method: get
+  url: /product/
+
+main:
+  description: 首页
+  skip_test: true
+  method: get
+  url: /main/
+
+invest:
+  description: 购买
+  category: financial
+  method: post
+  url: /invest/
+  params:
+    product_id:
+    amount: 100
+
+redeem:
+  description: 赎回
+  depend_on: invest
+  category: financial
+  method: post
+  url: /redeem/
+  params:
+    product_id:
+    amount: 10
+

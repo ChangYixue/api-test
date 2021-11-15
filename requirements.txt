@@ -1,0 +1,7 @@
+requests==2.22.0
+PyYAML==5.2
+pytest
+allure-pytest
+pytest-timeout
+pytest-dependency==0.5.1
+pytest-ordering

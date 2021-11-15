@@ -1,0 +1,10 @@
+{
+    "headers": {
+        "Authorization": "Basic XXX"
+    },
+    "params": {
+        "email": "test@qq.com",
+        "password": "123456",
+        "device_pubkey": "YYY"
+    }
+}
